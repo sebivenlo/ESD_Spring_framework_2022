@@ -1,4 +1,9 @@
 FROM openjdk:11
-ADD target/*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT java -jar -Dspring.profiles.active=dev app.jar
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y inotify-tools dos2unix
+ENV HOME=/app
+RUN mkdir -p $HOME
+WORKDIR $HOME
+ADD . .
+RUN ./mvnw install -DskipTests
+ENTRYPOINT ["java","-jar","target/*.jar"]
