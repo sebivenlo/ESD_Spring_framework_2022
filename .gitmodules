@@ -1,0 +1,6 @@
+[submodule "spring_starter"]
+	path = spring_starter
+	url = git@github.com:jasont20015/Spring-starter-workshop.git
+[submodule "spring_form"]
+	path = spring_form
+	url = git@github.com:jasont20015/Spring-form-validation.git
