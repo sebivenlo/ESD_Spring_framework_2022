@@ -1,15 +1,20 @@
 package com.example.validatingforminput;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Student {
 
     //INITIALISE VARIABLES
-    private final int id;
-    private final int PCN;
+    @NotNull
+    private final Integer id;
+    @NotNull
+    private final Integer PCN;
+    @NotNull
+    @Size(min=2, max=30)
     private String firstName;
+    @NotNull
+    @Size(min=2, max=30)
     private String lastName;
     private Specialisation specialisation;
 

@@ -5,16 +5,16 @@
   <title>Student validator</title>
 </head>
 <body>
-<form action="#" th:action="@{/}" th:object="${studentForm}" method="post">
+<form action="#" th:action="@{/}" th:object="${student}" method="post">
   <table>
     <tr>
-      <td>Student number:</td>
-      <td><input type="text" th:field="*{id}" /></td>
+      <td>Student ID:</td>
+      <td><input type="number" th:field="*{id}" /></td>
       <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Student number Error</td>
     </tr>
     <tr>
       <td>PCN:</td>
-      <td><input type="text" th:field="*{PCN}" /></td>
+      <td><input type="number" th:field="*{PCN}" /></td>
       <td th:if="${#fields.hasErrors('PCN')}" th:errors="*{PCN}">PCN Error</td>
     </tr>
     <tr>

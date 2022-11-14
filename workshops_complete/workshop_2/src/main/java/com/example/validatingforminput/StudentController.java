@@ -9,19 +9,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@Controller
 public class StudentController implements WebMvcConfigurer {
-    //TODO: Add spring annotations
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/results").setViewName("results");
     }
 
+    @GetMapping("/")
     public String showForm(Student student) {
         return "student";
     }
 
-    public String checkStudentInfo(Student studentForm, BindingResult bindingResult) {
+    @PostMapping("/")
+    public String checkStudentInfo(@Valid Student student, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "student";
