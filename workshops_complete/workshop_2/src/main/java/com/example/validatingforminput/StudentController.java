@@ -19,14 +19,14 @@ public class StudentController implements WebMvcConfigurer {
 
     @GetMapping("/")
     public String showForm(Student student) {
-        return "student";
+        return "form";
     }
 
     @PostMapping("/")
     public String checkStudentInfo(@Valid Student student, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return "student";
+            return "form";
         }
 
         return "redirect:/results";
