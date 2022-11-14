@@ -68,7 +68,6 @@ public class Student {
                 ", \"PCN\":" + PCN +
                 ", \"firstName\":\"" + firstName +
                 "\", \"lastName\":\"" + lastName +
-                "\", \"specialisation\":\"" + specialisation +
                 "\"}";
     }
 }
