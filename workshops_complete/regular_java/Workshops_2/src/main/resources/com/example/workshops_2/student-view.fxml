@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="297.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.workshops_2.StudentController">
+   <children>
+      <Label fx:id="idLbl" layoutX="76.0" layoutY="97.0" prefHeight="21.0" prefWidth="72.0" text="ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lastNameLbl" layoutX="76.0" layoutY="183.0" prefHeight="21.0" prefWidth="72.0" text="Last Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstNameLbl" layoutX="76.0" layoutY="155.0" text="First Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="PCNLbl" layoutX="76.0" layoutY="124.0" prefHeight="21.0" prefWidth="72.0" text="PCN">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="titleLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="33.0" prefHeight="17.0" prefWidth="404.0" text="Form validator example">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idTxtFld" layoutX="183.0" layoutY="95.0" />
+      <TextField fx:id="PCNTxtFld" layoutX="183.0" layoutY="122.0" />
+      <TextField fx:id="firstNameTxtFld" layoutX="183.0" layoutY="153.0" />
+      <TextField fx:id="lastNameTxtFld" layoutX="183.0" layoutY="181.0" />
+      <Button fx:id="ValidateBtn" layoutX="183.0" layoutY="222.0" mnemonicParsing="false" onAction="#ValidateBtn_click" text="Validate form">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="idErrorLbl" layoutX="344.0" layoutY="99.0" />
+      <Label fx:id="pcnErrorLbl" layoutX="344.0" layoutY="126.0" />
+      <Label fx:id="firstNameErrorLbl" layoutX="344.0" layoutY="157.0" />
+      <Label fx:id="lastNameErrorLbl" layoutX="344.0" layoutY="185.0" />
+      <Label fx:id="SuccessLabel" layoutX="183.0" layoutY="266.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
