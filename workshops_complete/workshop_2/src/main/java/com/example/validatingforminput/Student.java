@@ -1,5 +1,6 @@
 package com.example.validatingforminput;
 
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -7,25 +8,19 @@ public class Student {
 
     //INITIALISE VARIABLES
     @NotNull
-    private final Integer id;
+    private Integer id;
     @NotNull
-    private final Integer PCN;
+    private Integer PCN;
     @NotNull
+    @Pattern(regexp="^[A-Za-z]*$", message = "Must be characters")
     @Size(min=2, max=30)
     private String firstName;
     @NotNull
+    @Pattern(regexp="^[A-Za-z]*$", message = "Must be characters")
     @Size(min=2, max=30)
     private String lastName;
     private Specialisation specialisation;
 
-    //CONSTRUCTOR
-    public Student (final int id, final int PCN, String firstName, String lastName) {
-        this.id = id;
-        this.PCN = PCN;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.specialisation = Specialisation.SOFTWAREENGINEERING;
-    }
     //HELPER FUNCTIONS
     /**
      * This method is used to change specialisation from software engineering. If the user is currently software
@@ -55,8 +50,14 @@ public class Student {
 
     //GETTERS AND SETTERS
 
-    public int getId() {
+
+
+    public Integer getId() {
         return id;
+    }
+
+    public Integer getPCN() {
+        return PCN;
     }
 
     public String getFirstName() {
@@ -75,9 +76,12 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public int getPCN() {
-        return PCN;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
+    public void setPCN(Integer PCN) {
+        this.PCN = PCN;
+    }
 
 }
