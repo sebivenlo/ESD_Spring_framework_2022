@@ -7,10 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StudentController {
 
-    private final int id = 1;
-    private final int PCN = 202050;
-    private static final String firstNameTemplate = "%s";
-    private static final String lastNameTemplate = "%s";
 
     /**
      * Returns a student based on the parameters provided
@@ -21,7 +17,7 @@ public class StudentController {
      * @return a new student object.
      */
     @GetMapping("/student")
-    public Student createStudent(@RequestParam(defaultValue = "Marek") String firstName, @RequestParam(defaultValue = "Broz") String lastName) {
+    public Student createStudent(@RequestParam(defaultValue = "0") int id, @RequestParam(defaultValue = "0") int PCN, @RequestParam(defaultValue = "Marek") String firstName, @RequestParam(defaultValue = "Broz") String lastName) {
         return new Student(id, PCN, String.format(firstNameTemplate, firstName),String.format(lastNameTemplate, lastName));
     }
 }
