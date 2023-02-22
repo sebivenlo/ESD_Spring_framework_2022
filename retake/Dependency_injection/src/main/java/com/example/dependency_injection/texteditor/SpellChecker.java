@@ -2,17 +2,9 @@ package com.example.dependency_injection.texteditor;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
-import org.springframework.util.ResourceUtils;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class SpellChecker {
