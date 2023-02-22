@@ -58,7 +58,9 @@ DI exercise `TextEditor` that contains a `SpellChecker` dependency.
 Create a class called `SpellChecker` that contains a method to check the spelling of a given word.
 Configure the Spring framework to manage the lifecycle of the `TextEditor` and `SpellChecker` objects, using annotations.
 
-Test the application to ensure that the TextEditor is able to use the `SpellChecker` to check the spelling of a word.
+Test the application to ensure that the TextEditor is able to use the `SpellChecker` to check the spelling of a word. Run the DependencyInjectionApplication, launch your browser and go to localhost:8080 (by default) to confirm everything works.
+
+Bonus exercise requires you to also alter the texteditor.html file in `main/resources/templates/`
 
 ## Spring MVC
 
