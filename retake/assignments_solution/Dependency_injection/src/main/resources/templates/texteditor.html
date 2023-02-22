@@ -13,9 +13,12 @@
         </table>
     </form>
 </div>
-<div th:if="${correct != null}">
-    <span th:if="${correct}">The word was correctly spelled.</span>
-    <span th:if="${!correct}">The word was incorrectly spelled.</span>
+<div th:if="${wentThrough}">
+    <span th:if="${!incorrect}">The word was correctly spelled.</span>
+    <span th:if="${incorrect}">The word was incorrectly spelled.</span>
+    <ul>
+        <li th:each="incorrectWord : ${incorrectWords}" th:text="'Incorrect word: '+${incorrectWord}"></li>
+    </ul>
 </div>
 
 </body>

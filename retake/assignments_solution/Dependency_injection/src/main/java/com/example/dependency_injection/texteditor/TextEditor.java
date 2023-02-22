@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @Controller
 public class TextEditor {
     //TODO 2: add spell checker using Dependency Injection
@@ -27,15 +29,22 @@ public class TextEditor {
     @PostMapping("/")
     public String spellCheck(@RequestParam String text, Model model) {
         boolean correctlySpelled = false;
+        boolean somethingFalse = false;
+        boolean wentThrough = false;
+        ArrayList<String> incorrectWords = new ArrayList<>();
         for(String word : text.split(" ")){
+            wentThrough = true;
             correctlySpelled = checkUsingSpellchecker(word);
             if(!correctlySpelled){
-                break;
+                somethingFalse = true;
+                incorrectWords.add(word);
             }
         }
         //boolean correctlySpelled = checkUsingSpellchecker(text);
         //Pass correctlySpelled to thymeleaf
-        model.addAttribute("correct", correctlySpelled);
+        model.addAttribute("incorrect", somethingFalse);
+        model.addAttribute("wentThrough", wentThrough);
+        model.addAttribute("incorrectWords", incorrectWords);
         return "texteditor";
     }
 
