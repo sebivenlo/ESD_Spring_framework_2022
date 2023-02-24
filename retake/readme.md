@@ -149,7 +149,8 @@ Spring MVC is a module of the Spring framework dealing with the Model-View-Contr
 
 The Spring MVC architecture separates an application into three main components: the Model, View, and Controller. The Model represents the data and business logic of the application, the View displays the data to the user, and the Controller receives and processes user requests and updates the Model and View as needed.
 
-![Model/View/Controller](https://i.imgur.com/BNozpWG.png)
+![Model/View/Controller](https://user-images.githubusercontent.com/48223014/221278947-c9b68fb3-f163-4cd2-8486-684040f58521.png)
+
 
 ### How to use MVC in spring
 
