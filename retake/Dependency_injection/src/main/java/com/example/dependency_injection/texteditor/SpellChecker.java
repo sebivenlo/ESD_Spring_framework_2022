@@ -4,6 +4,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 
@@ -14,8 +15,8 @@ public class SpellChecker {
     public SpellChecker() throws IOException{
         words = new ArrayList<>();
         Resource resource = new ClassPathResource("spellcheck/words_alpha.txt");
-        File file = resource.getFile();
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+        InputStream file = resource.getInputStream();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file, StandardCharsets.UTF_8));
         bufferedReader.lines().forEach(line -> words.add(line));
     }
 
