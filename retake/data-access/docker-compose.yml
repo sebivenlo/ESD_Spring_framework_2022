@@ -1,0 +1,48 @@
+version: '3.7'
+services:
+  spring-db:
+    container_name: spring-db
+    image: mysql:8.0
+    networks:
+      - spring-network
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=database-spring
+      - MYSQL_ROOT_PASSWORD=rootPassword
+    volumes:
+      - dbvol:/var/lib/mysql
+      - ./schema-mysql.sql:/docker-entrypoint-initdb.d/0_init.sql
+    ports:
+      - "3306:3306"
+    restart: always
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 5s
+      retries: 20
+
+  spring-data-access:
+    build:
+      context: .
+    container_name: spring-data-access
+    image: spring-data-access
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-network
+    depends_on:
+       spring-db:
+          condition: service_healthy
+    environment:
+      - MYSQL_HOST=spring-db
+      - MYSQL_USERNAME=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=database-spring
+      - MYSQL_PORT=3306
+
+networks:
+  spring-network:
+    name: spring-network
+
+volumes:
+  dbvol:
