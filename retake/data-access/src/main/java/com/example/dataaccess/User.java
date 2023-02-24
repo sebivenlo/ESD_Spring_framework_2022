@@ -1,9 +1,5 @@
 package com.example.dataaccess;
 
-import jakarta.persistence.*;
-import org.springframework.data.relational.core.mapping.Table;
-
-
 public class User {
 //TODO make this class an entity with the name "users". Make sure to add the necessary annotations
     private Long id;
