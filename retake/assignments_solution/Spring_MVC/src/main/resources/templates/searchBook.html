@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search book</title>
+    <style>
+        #books {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #books td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #books tr:nth-child(even){background-color: #f2f2f2;}
+
+        #books tr:hover {background-color: #ddd;}
+
+        #books th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search book by title</h1>
+    <form action="/searchBook" method="get">
+        <label for="title">Search</label>
+        <input type="text" name="title" id="title">
+        <input type="submit" value="Search">
+    </form>
+    <table id="books">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>isbn</th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+
+        <tr th:each="book : ${books}">
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book.isbn}"></td>
+            <td><a th:href="@{/editBook/{isbn}(isbn=${book.isbn})}">Edit</a></td>
+            <td><a th:href="@{/deleteBook/{isbn}(isbn=${book.isbn})}">Delete</a></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
