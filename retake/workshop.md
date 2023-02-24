@@ -7,11 +7,20 @@ List what the structure of this workshop is going to be.
 
 ### Overview of Spring
 
-List the main points of Spring. What features does it provide and what can we do with it.
+Spring Framework is a popular open-source framework for developing enterprise applications in Java. It provides a wide range of features and functionalities that enable developers to build robust, scalable, and secure applications.
+
+#### Key Features
+
+* **Dependency Injection (DI)**: Spring provides a powerful DI mechanism that makes it easy to manage dependencies between components. This results in loosely coupled code that is easier to test and maintain.
+* **Aspect-Oriented Programming (AOP)**: Spring provides an AOP framework that allows developers to implement cross-cutting concerns such as logging, caching, and security.
+* **Data Access**: Spring provides a powerful data access framework that makes it easy to work with databases using JDBC, JPA, or other persistence frameworks.
+* **Web Development**: Spring provides a web development framework that makes it easy to build web applications using MVC or WebFlux.
+* **Security**: Spring provides a comprehensive security framework that includes authentication, authorization, and secure communication.
+* **Messaging**: Spring provides a messaging framework that makes it easy to build messaging applications using JMS or other messaging protocols.
+* **Integration**: Spring provides integration with other frameworks such as Hibernate, Struts, and JSF, making it easy to use with existing applications.
 
 ### Why Spring
 
-Comparison :)
 
 | Feature               | Spring                 | JavaFX          | Nodejs            | React            | Laravel                |
 | --------------------- | ---------------------- | --------------- | ----------------- | ---------------- | ---------------------- |
@@ -23,6 +32,9 @@ Comparison :)
 | **Documentation**     | Comprehensive          | Sparse          | Abundant          | Extensive        | Extensive              |
 | **Learning Curve**    | Steep                  | Moderate        | Beginner-friendly | Moderate         | Beginner-friendly      |
 
+Spring is a popular framework for developing enterprise applications in Java because of its modular design, robust Dependency Injection mechanism, integration with other frameworks, strong community support, and scalability. It offers a lot of features to Java developers, making it a preferred choice for many enterprise applications.
+
+While other frameworks may excel in certain use cases, Spring still offers a wide range of features and benefits that make it a strong choice for enterprise Java development.
 
 ---
 
@@ -31,7 +43,10 @@ It's hard to measure performance of Spring compared to other frameworks. The mai
 
 ### Benefits of using Spring
 
-List all benefits of using spring in general.
+1. **Modularity**: Spring has a modular design that allows developers to pick and choose the components they need, making it lightweight and more efficient.
+2. **Scalability**: Spring's support for distributed systems and cloud-native architectures makes it an ideal choice for building large-scale applications that can handle high volumes of traffic.
+3. **Community Support**: Spring has a large and active community of developers who contribute to the framework's development, providing support through forums, documentation, and tutorials.
+4. **Easy Testing**: Spring's DI mechanism and AOP framework make it easy to write testable code, resulting in faster development cycles and more reliable applications.
 
 ## Spring Core
 
@@ -49,7 +64,7 @@ How dependency injection works in general & the different ways to implement it.
 
 How spring specifically implements dependency injection.
 
-### Hands-on exercise 1
+### <span style="color:red"> Hands-on exercise 1</span>
 
 ~dictionary-with-annotations-and-stuff-included~
 
@@ -58,7 +73,11 @@ DI exercise `TextEditor` that contains a `SpellChecker` dependency.
 Create a class called `SpellChecker` that contains a method to check the spelling of a given word.
 Configure the Spring framework to manage the lifecycle of the `TextEditor` and `SpellChecker` objects, using annotations.
 
-Test the application to ensure that the TextEditor is able to use the `SpellChecker` to check the spelling of a word.
+Steps:
+1. Make the dependency in `SpellChecker.java` injectable
+2. Add spell checker using Dependency Injection in `TextEditor.java `class to utilise spell checker in `checkUsingSpellchecker` method
+4. Run the DependencyInjectionApplication, launch your browser and go to localhost:8080 (by default) to confirm that the TextEditor is able to use the `SpellChecker` to check the spelling of a word
+5. Bonus: Check each word in the text and return a list of incorrectly spelled words. This requires you to also alter the texteditor.html file in `main/resources/templates/`
 
 ## Spring MVC
 
@@ -72,7 +91,7 @@ General overview of MVC in spring.
 
 Explanation of how to use MVC in spring.
 
-### Hands-on exercise 2
+### <span style="color:red"> Hands-on exercise 2</span>
 
 Build a simple web application using spring MVC that displays a list of books and allows users to add, edit, and delete books.
 
@@ -89,7 +108,7 @@ Overview of data access technologies supported by Spring Framework such as `JDBC
 
 
 
-### Hands-on exercise 3
+### <span style="color:red"> Hands-on exercise 3</span>
 
 Interaction exercise with a database.
 
@@ -133,7 +152,7 @@ Replace mydatabase, myuser, and mypassword with the appropriate values for your 
 7. If you want to extend this exercise, you can add additional data access operations to your application. For example, you could add endpoints to create, update, and delete users, or you could add additional query methods to the UserRepository interface. You could also add additional entities and relationships between them to explore more advanced data access scenarios.
 
 
-### Hands-on Bonus exercise 4
+### <span style="color:red">Hands-on Bonus exercise</span>
 
 ////
 
